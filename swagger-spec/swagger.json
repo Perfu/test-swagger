@@ -122,7 +122,10 @@
             }
           },
           "400" : {
-            "description" : "Invalid status value"
+            "description" : "Invalid status value",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorModel"
+            }
           }
         },
         "security" : [ {
@@ -851,6 +854,18 @@
         "code" : 0,
         "type" : "type",
         "message" : "message"
+      }
+    },
+    "ErrorModel" : {
+      "required" : [ "code", "message" ],
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
+        }
       }
     }
   },
