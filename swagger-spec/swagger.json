@@ -834,17 +834,19 @@
       }
     },
     "ApiResponse" : {
-      "type" : "object",
+      "required" : [ "code", "message" ],
       "properties" : {
-        "info" : {
-          "$ref" : "#/definitions/ErrorModel"
+        "code" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "message" : {
+          "type" : "string"
         }
       },
       "example" : {
-        "info" : {
-          "code" : 0,
-          "message" : "message"
-        }
+        "code" : 0,
+        "message" : "message"
       }
     },
     "ErrorModel" : {
